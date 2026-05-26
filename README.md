@@ -1,15 +1,29 @@
-# umi project
+# umi-plugin-.
 
-## Getting Started
+A umi plugin
 
-Install dependencies,
-
-```bash
-$ yarn
-```
-
-Start the dev server,
+## Install
 
 ```bash
-$ yarn start
+pnpm i umi-plugin-.
 ```
+
+## Usage
+
+Configure in `.umirc.ts`,
+
+```js
+export default {
+  plugins: [
+    ['umi-plugin-.'],
+  ],
+}
+```
+
+## Options
+
+TODO
+
+## LICENSE
+
+MIT
