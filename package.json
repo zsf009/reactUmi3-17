@@ -1,26 +1,29 @@
 {
-  "name": "umi-plugin-.",
+  "private": true,
   "author": "FeiD <feidian11745@jushuitan.com>",
-  "version": "0.0.1",
-  "main": "dist/cjs/index.js",
-  "types": "dist/cjs/index.d.ts",
   "scripts": {
-    "dev": "father dev",
-    "build": "father build"
+    "build": "max build",
+    "dev": "max dev",
+    "format": "prettier --cache --write .",
+    "postinstall": "max setup",
+    "prepare": "husky",
+    "setup": "max setup",
+    "start": "npm run dev"
   },
-  "keywords": [],
-  "authors": {
-    "name": "FeiD <feidian11745@jushuitan.com>",
-    "email": "feidian11745@jushuitan.com"
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "@ant-design/pro-components": "^2.4.4",
+    "@umijs/max": "^4.6.56",
+    "antd": "^5.4.0"
   },
-  "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
-    "father": "^4.1.8",
-    "umi": "^4.6.56",
-    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "husky": "^9",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
     "typescript": "^5.0.3"
   }
 }
