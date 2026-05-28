@@ -3,7 +3,15 @@
   "author": "FeiD <feidian11745@jushuitan.com>",
   "scripts": {
     "build": "max build",
-    "dev": "max dev",
+    "build:dev": "cross-env UMI_ENV=develop max build",
+    "build:pf": "cross-env UMI_ENV=pf max build",
+    "build:pf1": "cross-env UMI_ENV=pf1 max build",
+    "build:pre": "cross-env UMI_ENV=pre max build",
+    "dev": "cross-env UMI_ENV=develop max dev",
+    "dev:pf": "cross-env UMI_ENV=pf max dev",
+    "dev:pf1": "cross-env UMI_ENV=pf1 max dev",
+    "dev:pre": "cross-env UMI_ENV=pre max dev",
+    "dev:test": "cross-env UMI_ENV=test max dev",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",
     "prepare": "husky",
@@ -17,13 +25,16 @@
     "antd": "^5.4.0"
   },
   "devDependencies": {
+    "@react-dev-inspector/umi4-plugin": "^2.0.1",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
+    "cross-env": "^10.1.0",
     "husky": "^9",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
     "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-packagejson": "^2.4.3",
+    "react-dev-inspector": "^2.0.1",
     "typescript": "^5.0.3"
   }
 }

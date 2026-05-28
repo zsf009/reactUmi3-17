@@ -2,7 +2,6 @@ import services from '@/services/demo';
 import {
   ActionType,
   FooterToolbar,
-  PageContainer,
   ProDescriptions,
   ProDescriptionsItemProps,
   ProTable,
@@ -11,6 +10,7 @@ import { Button, Divider, Drawer, message } from 'antd';
 import React, { useRef, useState } from 'react';
 import CreateForm from './components/CreateForm';
 import UpdateForm, { FormValueType } from './components/UpdateForm';
+import './index.less';
 
 const { addUser, queryUserList, deleteUser, modifyUser } =
   services.UserController;
@@ -82,6 +82,8 @@ const handleRemove = async (selectedRows: API.UserInfo[]) => {
   }
 };
 
+const prefix = 'ssyy-table';
+
 const TableList: React.FC<unknown> = () => {
   const [createModalVisible, handleModalVisible] = useState<boolean>(false);
   const [updateModalVisible, handleUpdateModalVisible] =
@@ -140,11 +142,7 @@ const TableList: React.FC<unknown> = () => {
   ];
 
   return (
-    <PageContainer
-      header={{
-        title: 'CRUD 示例',
-      }}
-    >
+    <div className={prefix}>
       <ProTable<API.UserInfo>
         headerTitle="查询表格"
         actionRef={actionRef}
@@ -263,7 +261,7 @@ const TableList: React.FC<unknown> = () => {
           />
         )}
       </Drawer>
-    </PageContainer>
+    </div>
   );
 };
 
